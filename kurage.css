@@ -1,0 +1,116 @@
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #ddc7f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.octo {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.octo path {
+  stroke: #4B384C;
+  fill: none;
+  stroke-width: 85px;
+  stroke-linecap: round;
+}
+
+.octo #head path {
+  fill: #4B384C;
+  stroke: none;
+}
+
+.octo g polyline,
+.octo #tall {
+  visibility: hidden;
+}
+
+.octo #eyeleft path.st2,
+.octo #eyeright path.st2 {
+  fill: none;
+  stroke: #E2A9E5;
+  stroke-width: 10;
+  stroke-miterlimit: 10;
+}
+
+.octo #eyeleft path.st3,
+.octo #eyeright path.st3 {
+  fill: #E2A9E5;
+  visibility: hidden;
+}
+
+.st4 {
+  fill: #842588;
+  -webkit-animation: pulse 2s ease-in-out infinite alternate;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+#sidespots .st4 {
+  fill: #b406bb;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.wave + .wave {
+  z-index: 2;
+}
+
+svg.fish {
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+
+svg.fish .st0 {
+  fill: #882A86;
+}
+
+svg.fish .st1 {
+  fill: #4E374E;
+}
+
+svg.fish .st2 {
+  fill: #D8A6CD;
+}
+/*# sourceMappingURL=kurage.css.map */

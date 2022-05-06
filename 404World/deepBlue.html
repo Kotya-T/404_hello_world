@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Luckiest+Guy'>
+    <link rel='stylesheet' href='./bubble.css'>
+    <link rel='stylesheet' href='./cursor.css'>
+    <link rel='stylesheet' href='./deep.css'>
+    <link rel='stylesheet' href='./click.css'>
+    <script src="deep.js"></script>
+</head>
+<header>
+</header>
+
+<body>
+
+    <audio type="audio/mp3" src="深海.mp3" loop autoplay></audio>
+
+    <!-- バブル文字 -->
+    <div class="center-outer">
+        <div class="center-inner">
+            <div class="bubbles">
+                <h1>Deep Blue World</h1>
+            </div>
+        </div>
+    </div>
+    <!-- バブル文字 -->
+    <div class="BB">
+
+        <div class="bgBlack">
+            <div class="img-blue">
+                <video class="movieBgBlue" id="videoBlue" src="深海.mp4" autoplay loop muted width="500" height="8192" type="video/mp4"></video>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://localhost:3000/404World/manyFish.html?wmode=transparent" loop></iframe>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://localhost:3000/404World/manyFish.html?wmode=transparent" loop></iframe>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://localhost:3000/404World/manyFish.html?wmode=transparent" loop></iframe>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://localhost:3000/404World/manyFish.html?wmode=transparent" loop></iframe>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://localhost:3000/404World/manyFish.html?wmode=transparent" loop></iframe>
+                <iframe class="manyF" frameborder="0" width="100%" height="100%" src="http://127.0.0.1:5501/dementor.html?wmode=transparent" loop></iframe>
+
+                <iframe class="jellyF" frameborder="0" width="100%" height="100%" src="jellyFish.html" loop></iframe> -->
+                <iframe class="kisyo" frameborder="0" width="100%" height="100%" src="kisyoku.js" loop></iframe>
+
+                <div class="ankou">
+                    <div class="disclaimer">
+                        <h1>404 Not Found</h1>
+                        <div class="siro">
+                            <h2>ここには何もない。<br /> 光も届かぬ闇の果て。<br />
+                            </h2>
+                            <h3>引き返すこともできる。<br />今ならまだ…<br />
+                            </h3>
+                        </div>
+                        <a href="#" id="backW" onclick="back()">引き返す</a>
+                        <a href="" id="nextW">次の世界へ</a>
+                    </div>
+                    <!-- <div class="fish">
+                            <div class="antena"></div>
+                            <div class="rest">
+                                <div class="head">
+                                    <div class="jaws">
+                                        <div class="jaw1">
+                                            <div class="teeth">
+                                                <div class="tooth"></div>
+                                                <div class="tooth"></div>
+                                                <div class="tooth"></div>
+                                                <div class="tooth"></div>
+                                            </div>
+                                        </div>
+                                        <div class="jaw2">
+                                            <div class="teeth">
+                                                <div class="tooth"></div>
+                                                <div class="tooth"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="eye"></div>
+                                    <div class="fins"></div>
+                                </div>
+                                <div class="tail"></div>
+                            </div>
+                        </div> -->
+                </div>
+                <!-- 404アンコウ -->
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function back() {
+        window.close();
+        window.open("https://pscsrv.co.jp/", '_blank');
+    }
+
+    $(function() {
+        // 操作対象のvideoを指定
+        var video = $('#videoBlue').get(0);
+        // 動画の再生
+        $('#play').click(function() {
+            video.play();
+        });
+        // 動画の一時停止
+        $('#stop').click(function() {
+            video.pause();
+        });
+        // 動画の頭出し（任意の秒へ移動）
+        $('#atama').click(function() {
+            video.currentTime = 0; // 入れた秒の位置へ移動（例は0秒）
+        });
+        // 音声ミュート（トグル式）
+        $('#mute').click(function() {
+            video.muted = video.muted ? false : true;
+        });
+        //音量アップ
+        $('#vol-up').click(function() {
+            if (video.volume <= 0.75) {
+                video.volume = video.volume + 0.25;
+                $("#vol").text(video.volume);
+            }
+        });
+        //音量ダウン
+        $('#vol-down').click(function() {
+            video.volume = video.volume - 0.25;
+            $("#vol").text(video.volume);
+        });
+        //音量表示
+        $("#vol").text(video.volume);
+    });
+</script>
+
+</html>

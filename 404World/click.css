@@ -1,0 +1,96 @@
+html {
+    min-height: 100%;
+}
+
+.BB {
+    /* display: inline-block; */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.container div {
+    margin: 5px;
+    padding: 30px;
+    background: #0091EA;
+    color: #FFF;
+}
+
+#mainImage {
+    margin: 0 auto 20px auto;
+    width: 100%;
+    position: relative;
+    border: none;
+    padding: 0;
+}
+
+#mainImage .img-haikei {
+    max-height: 800px;
+    width: 100%;
+}
+
+.img-blue {
+    text-align: center;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    border: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #0123ff;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0;
+    z-index: -100;
+    cursor: url("アンコウ.png");
+}
+
+.img-blue::-webkit-scrollbar {
+    display: none;
+}
+
+#videoBlue {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#mainImage .img-haikei video.movieBg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#mainImage img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    z-index: 0;
+}
+
+#play {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    z-index: 1;
+}
+
+.otoderu {
+    width: max-content;
+    display: center;
+}

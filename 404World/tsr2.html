@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <!----- main ----->
+    <a href="#" onClick="sub_ccf_click('file:///C:/Users/k-seshi.LOCALPSC/Desktop/404/ttssrrr.html')">サブCCフロント</a>
+
+    <a href="#" id = "win6" onClick="terry_click()">terry</a>
+
+  </body>
+  <script>
+  var win0 = window.opener;
+  var win6 = win0.win6;
+  function terry_click() {
+    if (!win6 || win6.closed) {
+      alert('メニュー画面からTerryを開いてください');
+    } else {
+      win6.close();
+      win6 = window.open("https://www.google.com/", '_blank', "width=320,height=240");
+      // win6.focus();
+    }
+  }
+
+  function sub_ccf_click(url) {
+        window.open(url, '_blank', "width=320,height=240");
+
+  }
+
+
+  // function setValue() {
+  //   var str = document.getElementById("subWin6").value;
+  //   window.opener.document.getElementById("win6").value = str;
+  //   self.close();
+  // }
+</script>
+
+<!-- 404World�ܥ��� -->
+</html>

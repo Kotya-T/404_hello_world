@@ -1,0 +1,61 @@
+.manyF {
+    opacity: 0;
+    position: relative;
+    bottom: 80%;
+    z-index: 3;
+    padding: 50%;
+    overflow: hidden;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+.manyF::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* епеще▓ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(#17a2b8, #072324);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+}
+
+canvas#bubbles-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}

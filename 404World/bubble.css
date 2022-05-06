@@ -1,0 +1,55 @@
+/* バブル文字 */
+
+
+/* Non essential CSS - Just for example centering */
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.center-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.center-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+/* Essential CSS - Makes the effect work */
+
+body {
+    background: linear-gradient(to bottom, rgb(0, 180, 251), black);
+    z-index: -10;
+}
+
+.bubbles {
+    display: inline-block;
+    font-family: arial;
+    position: relative;
+}
+
+.bubbles h1 {
+    position: relative;
+    font-size: 300%;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(0, 85, 255);
+    z-index: 2;
+}
+
+.individual-bubble {
+    position: absolute;
+    border-radius: 100%;
+    bottom: 10px;
+    background-color: rgb(195, 241, 255);
+    z-index: 1;
+}
+
+
+/* ---------------------------------------------------------------- */

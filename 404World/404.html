@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href='./start.css'>
+    <link rel='stylesheet' href='./click.css'>
+
+    <title>-404 World-</title>
+
+
+</head>
+
+<body>
+    <div id="world_number" value="143"></div>
+    <!----- header----->
+    <header></header>
+    <nav></nav>
+    <!----- /header ----->
+
+
+    <!----- main ----->
+    <article>
+        <div id="rings"></div>
+        <div id="mainImage">
+            <div class="img-haikei">
+                <video class="movieBg" id="video01" src="404ver.1.webm" height="480" weight="720" type="video/webm"></video>
+            </div>
+
+            <div class="deleteEvent">
+                <button id="play" type="button">404World<br><div class="otoderu"> 音量注意</div></button>
+                <img src="wait.jpg" height="480" weight="720">
+            </div>
+        </div>
+        <a onclick="window.location.reload(true);">
+            <button id="reWorld" name=reWorld>別の世界へ</button>
+        </a>
+        <!-- <button id = "reWorld" onclick="location.href='http://localhost:3000/404.html?playW=true'">次の世界へ</button> -->
+
+
+
+    </article>
+    <!----- /main ----->
+    <?php break;
+
+      case 2:?>
+
+    <!----- main ----->
+    <article>
+        <div id="rings"></div>
+        <div id="mainImage">
+            <div class="img-haikei">
+            </div>
+
+            <div class="deleteEvent">
+            </div>
+        </div>
+        <a onclick="window.location.reload(true);">
+            <button id="reWorld" name=reWorld>別の世界へ</button>
+        </a>
+
+        </section>
+    </article>
+    <!----- /main ----->
+
+
+    <?php } ?>
+
+
+    <!----- footer ----->
+    <footer></footer>
+    <!----- /footer ----->
+</body>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+<script>
+    // VANTA.RINGS({
+    //   el:"#rings",
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 400.00,
+    //   minWidth: 200.00,
+    //   scale: 1.00,
+    //   scaleMobile: 1.00,
+    //   backgroundColor: 0x0,
+    //   color: 0xff00a5
+    // })
+</script>
+
+<!-- movie -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(function() {
+        // 操作対象のvideoを指定
+        var video = $('#video01').get(0);
+        // 動画の再生
+        $('#play').click(function() {
+            video.play();
+        });
+        // 動画の一時停止
+        $('#stop').click(function() {
+            video.pause();
+        });
+        // 動画の頭出し（任意の秒へ移動）
+        $('#atama').click(function() {
+            video.currentTime = 0; // 入れた秒の位置へ移動（例は0秒）
+        });
+        // 音声ミュート（トグル式）
+        $('#mute').click(function() {
+            video.muted = video.muted ? false : true;
+        });
+        //音量アップ
+        $('#vol-up').click(function() {
+            if (video.volume <= 0.75) {
+                video.volume = video.volume + 0.25;
+                $("#vol").text(video.volume);
+            }
+        });
+        //音量ダウン
+        $('#vol-down').click(function() {
+            video.volume = video.volume - 0.25;
+            $("#vol").text(video.volume);
+        });
+        //音量表示
+        $("#vol").text(video.volume);
+    });
+</script>
+
+<!-- 404Worldボタン -->
+<script src="click.js"></script>
+
+</html>

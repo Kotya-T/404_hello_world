@@ -1,0 +1,270 @@
+/* 404アンコウ */
+
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=cyrillic,cyrillic-ext');
+:root {
+    --fish-body: #002727;
+    --light-opacity: 1;
+}
+
+.ankou {
+    background: linear-gradient(to bottom, rgb(15, 3, 56), black);
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    color: lightblue;
+    padding: calc(40vh - 20px) 8% 0 8%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    animation: blink 2s infinite ease-in-out;
+}
+
+.disclaimer {
+    position: relative;
+    text-align: center;
+    color: rgb(137, 0, 241);
+    /* border-color: aliceblue; */
+    -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+    font-size: 2em;
+    font-weight: 900;
+    font-family: cursive;
+    font-family: 'Lobster', cursive;
+    padding: 10%, 50%;
+}
+
+.siro {
+    text-align: center;
+    color: rgb(253, 253, 253);
+    font-size: 15px;
+}
+
+#backW {
+    padding: 5px 10px 5px 40px;
+    border-radius: 50% calc(20px + 0.7em) calc(20px + 0.7em) 50%/100% calc(20px + 0.7em) calc(20px + 0.7em) 100%;
+    font-size: 1.4em;
+    background: transparent;
+    color: limegreen;
+    border: 3px solid limegreen;
+    transition: 0.1s ease-in;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+#nextW {
+    padding: 5px 10px 5px 40px;
+    border-radius: 100% calc(20px + 0.7em) calc(20px + 0.7em) 50%/100% calc(20px + 0.7em) calc(20px + 0.7em) 100%;
+    font-size: 1.4em;
+    background: transparent;
+    color: limegreen;
+    border: 3px solid limegreen;
+    transition: 0.1s ease-in;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: hotpink;
+    border-color: hotpink;
+    mix-blend-mode: difference;
+}
+
+@keyframes float {
+    20% {
+        transform: translatey(-2px) scale(0.7);
+    }
+    40% {
+        transform: translatey(5px) scale(0.7);
+    }
+    60% {
+        transform: translatey(2px) scale(0.7);
+    }
+    80% {
+        transform: translatey(-2px) scale(0.7);
+    }
+}
+
+.fish {
+    margin: 0 -1.5vw 0 0;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.7);
+    transform-origin: 0 0;
+    animation: float 4s infinite alternate ease-out;
+}
+
+.fish .rest {
+    width: 40vw;
+    height: 25vw;
+    display: flex;
+    filter: drop-shadow(0 0 5px rgb(129, 0, 0));
+    position: relative;
+    top: -5vh;
+}
+
+.head {
+    width: 45%;
+    height: 100%;
+}
+
+.jaws {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.jaw1 {
+    width: 70%;
+    height: 60%;
+    border: 2vw solid pink;
+    border-bottom: none;
+    background: radial-gradient(ellipse at 100% 90%, grey 42%, #225 45%, #225 47%, grey 47%, grey 58%, #225 60%, #225 62%, grey 62%, grey 72%, #225 75%, #225 77%, grey 77%);
+    border-radius: 50% 50% 0 0;
+    margin-left: 30%;
+    box-sizing: border-box;
+    box-shadow: inset 0px 10px 20px 0 #111;
+}
+
+.jaw1 .teeth {
+    width: 80%;
+    height: 40%;
+    margin-left: 10%;
+    display: flex;
+    border-radius: 50% 50% 0 0;
+    overflow: hidden;
+}
+
+.jaw1 .tooth {
+    height: 100%;
+    width: 25%;
+    background: white;
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+
+.jaw1 .tooth:nth-child(2),
+.jaw1 .tooth:nth-child(3) {
+    transform: scaleY(0.5);
+    transform-origin: 50% 0;
+}
+
+.jaw2 {
+    width: 100%;
+    height: 40%;
+    border-top: 2vw solid pink;
+    background: var(--fish-body);
+    border-radius: 20px 0 0 100px;
+    box-sizing: border-box;
+}
+
+.jaw2 .teeth {
+    width: 60%;
+    height: 70%;
+    margin-left: 10%;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    top: -90%;
+    left: 10%;
+    position: relative;
+}
+
+.jaw2 .tooth {
+    height: 100%;
+    width: 15%;
+    background: white;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
+}
+
+.body {
+    height: 100%;
+    width: 50%;
+    background: var(--fish-body);
+    margin-left: -15%;
+    border-radius: 0 50% 130px 0/0 30px 190px 0;
+}
+
+.tail {
+    height: 40%;
+    width: 40%;
+    margin-top: 2%;
+    background: var(--fish-body);
+    margin-left: -25%;
+    border-radius: 0 10vw 20vw 0;
+    transform: skew(-20deg);
+}
+
+.eye {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: #ccc;
+    position: absolute;
+    margin: 3% 15%;
+    border: 5px solid #558;
+    box-sizing: border-box;
+    box-shadow: inset -5px -5px 10px #335;
+}
+
+.antena {
+    width: 50%;
+    height: calc(300px - 10vw);
+    position: relative;
+    border: 0.5vw solid transparent;
+    box-sizing: border-box;
+    z-index: -1;
+    border-radius: 50%;
+    border-top-color: #ffc;
+    border-right-color: #ffc;
+}
+
+.antena::before {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 170, var(--light-opacity));
+    content: "";
+    border-radius: 50%;
+    margin: 5%;
+    border: 2px solid rgba(200, 220, 20, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+    @keyframes float {
+        20% {
+            transform: translatey(-2px);
+        }
+        40% {
+            transform: translatey(5px);
+        }
+        60% {
+            transform: translatey(2px);
+        }
+        80% {
+            transform: translatey(-2px);
+        }
+    }
+    body {
+        flex-direction: column-reverse;
+        background: radial-gradient(circle at 30vw 110px, rgba(255, 255, 170, var(--light-opacity)) 5px, rgba(85, 85, 153, var(--light-opacity)) 35px, rgba(85, 85, 153, var(--light-opacity)) 70px, rgb(0, 26, 255) 20%, #006, #001);
+        padding: 0 5vw 30px 23vw;
+    }
+    .fish {
+        transform: none;
+        margin: 0;
+        position: relative;
+        top: 90px;
+        left: 2vw;
+    }
+    .fish .antena {
+        height: 160px;
+    }
+    .antena::before {
+        width: 10px;
+        height: 10px;
+        margin: 8%;
+    }
+}

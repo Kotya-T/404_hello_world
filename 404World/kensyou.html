@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<a a href="#" onClick="ccf_click('http://127.0.0.1:5500/tsr.html')">CCフロントシステムTSR</a>
+<a a href="#" id=" win6" onClick="terry_click()">terry</a>
+
+</body>
+<script>
+    var win6;
+
+    function ccf_click(url) {
+        window.open(url, '_blank', "width=320,height=240");
+    }
+    risaikui
+
+    function terry_click() {
+        alert("aaaa");
+        if (!win6 || win6.closed) {
+            win6 = window.open("https://www.google.com/", '_blank', "width=320,height=240");
+        } else {
+            alert("sssss");
+            win6.focus();
+        }
+    }
+</script>
+<!-- <script src="win6.js"></script> -->
+
+
+</html>

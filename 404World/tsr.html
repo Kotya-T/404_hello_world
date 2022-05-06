@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!----- main ----->
+    <a href="#" onClick="sub_ccf_click()">サブCCフロント</a>
+    <a href="#" id="win6" onClick="terry_click()">terry</a>
+    <!-- <a href="#" id="win6" onClick="terry_focus()">focus</a> -->
+    <!-- <a href="tsr2.html">tsr2</a> -->
+</body>
+<script>
+    var win0 = window.opener;
+    var win6 = win0.win6;
+
+    function terry_click() {
+        if (!win6 || win6.closed) {
+            alert('メニュー画面からTerryを開いてください');
+        } else {
+            win6.close();
+            win6 = window.open("https://www.google.com/", '_blank', "width=320,height=240");
+            //win6.innerHTML.focus();
+            //win0.terry_click();
+
+        }
+    }
+
+    // function terry_focus() {
+    //     if (!win6 || win6.closed) {
+    //         win6 = window.open("https://www.google.com/", '_blank', "width=320,height=240");
+    //     } else {
+    //         win6.focus();
+    //     }
+    // }
+
+
+    function sub_ccf_click() {
+        window.open("http://127.0.0.1:5500/ttssrrr.html", '_blank', "width=320,height=240");
+
+    }
+
+
+    // function setValue() {
+    //   var str = document.getElementById("subWin6").value;
+    //   window.opener.document.getElementById("win6").value = str;
+    //   self.close();
+    // }
+</script>
+<!-- 404World�ܥ��� -->
+
+</html>
