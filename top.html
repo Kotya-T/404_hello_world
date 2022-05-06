@@ -12,6 +12,12 @@
     <title>-404 World-</title>
 </head>
 
+<style>
+  .hide-frame {
+    display: none;
+  }
+</style>
+
 <!----- header----->
 <header>
 </header>
@@ -20,10 +26,10 @@
 <div class="main">
 
     <body>
-        <iframe id="World404_html" src="404World\404.html"></iframe>
-        <!-- <iframe style="display: none;" id="World404_num2" src="404World\deepBlue.html"></iframe>
-        <iframe style="display: none;" id="World404_num3" src="404World\playWorld.html"></iframe>
-        <iframe style="display: none;" id="World404_num4" src="universe.html"></iframe> -->
+        <iframe id="World404_num1" src="404World\404.html"></iframe>
+        <iframe class="hide-frame" id="World404_num2" src="404World\deepBlue.html"></iframe>
+        <iframe class="hide-frame" id="World404_num3" src="404World\playWorld.html"></iframe>
+        <iframe class="hide-frame" id="World404_num4" src="universe.html"></iframe>
     </body>
 </div>
 <footer>
@@ -75,6 +81,31 @@
 </footer>
 
 <script>
+
+    var frame1 = document.getElementById('World404_num1');
+    var frame2 = document.getElementById('World404_num2');
+    var frame3 = document.getElementById('World404_num3');
+    var frame4 = document.getElementById('World404_num4');
+
+    // ▶▶ 押された時に、どのフレームか判断して...
+    if (true /** フレーム２に切り替え */) {
+
+      resetHideFrame()
+      // 表示に
+      frame2.classList.toggle('hide-frame')
+    }
+
+    var resetHideFrame = function() {
+      frame1.classList.remove('hide-frame')
+      frame1.classList.add('hide-frame')
+      frame2.classList.remove('hide-frame')
+      frame2.classList.add('hide-frame')
+      frame3.classList.remove('hide-frame')
+      frame3.classList.add('hide-frame')
+      frame4.classList.remove('hide-frame')
+      frame4.classList.add('hide-frame')
+    }
+
     //読み込み完了してから変数を取得するようにする
     document.addEventListener(
         'DOMContentLoaded', event => {
