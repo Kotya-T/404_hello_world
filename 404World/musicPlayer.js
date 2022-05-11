@@ -47,7 +47,7 @@ $(function() {
         trackUrl = [
             "https://www.youtube.com/embed/VtzcpJV8-J0",
             "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/1.mp3",
-            "¿¼³¤.mp3",
+            "??.mp3",
             "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/4.mp3",
             "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3"
         ],

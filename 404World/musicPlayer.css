@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: transparent;
     font-family: Helvetica, Arial;
     margin: 0;
 }
@@ -45,22 +45,32 @@ body {
     z-index: 2;
 }
 
-#player {
+.all_elements {
     position: relative;
-    height: 100%;
-    z-index: 3;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.music_player {
+    position: absolute;
+    /* top: 100%; */
+    z-index: 100;
+    background-color: transparent;
 }
 
 #player-track {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 15px;
     left: 15px;
-    padding: 13px 22px 10px 184px;
-    background-color: #000000;
+    padding: 10px 22px 1px 184px;
+    background-color: transparent;
     border-radius: 15px 15px 0 0;
     transition: 0.3s ease top;
-    z-index: 1;
+    z-index: 100;
 }
 
 
@@ -159,7 +169,6 @@ body {
 }
 
 #player-content {
-    position: relative;
     height: 100%;
     background-color: #fff;
     box-shadow: 0 30px 80px #656565;
@@ -269,9 +278,12 @@ body {
 }
 
 #player-controls {
+    position: fixed;
+    z-index: 50;
+    top: 0;
     width: 250px;
     height: 100%;
-    margin: 0 5px 0 141px;
+    margin: 0 5px 0 80%;
     float: right;
     overflow: hidden;
 }
@@ -285,7 +297,7 @@ body {
 .button {
     width: 26px;
     height: 26px;
-    padding: 25px;
+    /* padding: 25px; */
     /* background-color: #fff; */
     border-radius: 6px;
     cursor: pointer;

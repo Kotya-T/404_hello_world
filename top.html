@@ -13,9 +13,9 @@
 </head>
 
 <style>
-  .hide-frame {
-    display: none;
-  }
+    .hide-frame {
+        display: none;
+    }
 </style>
 
 <!----- header----->
@@ -23,160 +23,142 @@
 </header>
 <!-- music player -->
 <!----- /header ----->
-<div class="main">
 
-    <body>
-        <iframe id="World404_num1" src="404World\404.html"></iframe>
-        <iframe class="hide-frame" id="World404_num2" src="404World\deepBlue.html"></iframe>
-        <iframe class="hide-frame" id="World404_num3" src="404World\playWorld.html"></iframe>
-        <iframe class="hide-frame" id="World404_num4" src="universe.html"></iframe>
-    </body>
-</div>
-<footer>
-    <div id="app-cover">
-        <div id="player">
-            <div id="player-track">
-                <div id="album-name"></div>
-                <div id="track-name"></div>
-                <div id="track-time">
-                    <div id="current-time"></div>
-                    <div id="track-length"></div>
-                </div>
-                <div id="s-area">
-                    <div id="ins-time"></div>
-                    <div id="s-hover"></div>
-                    <div id="seek-bar"></div>
-                </div>
+<body>
+    <div class="all_elements">
+        <div class="main">
+            <iframe class="" id="World404_num1" src="404World\404.html"></iframe>
+            <iframe class="hide-frame" id="World404_num2" src="404World\deepBlue.html"></iframe>
+            <iframe class="hide-frame" id="World404_num3" src="404World\playWorld.html"></iframe>
+            <iframe class="hide-frame" id="World404_num4" src="universe.html"></iframe>
+        </div>
+
+
+        <!-- <div class="music_player"> -->
+        <div id="player-track">
+            <div id="album-name"></div>
+            <div id="track-name"></div>
+            <div id="track-time">
+                <div id="current-time"></div>
+                <div id="track-length"></div>
             </div>
-            <div id="player-content">
-                <div id="album-art">
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
-                    <div id="buffer-box">Buffering ...</div>
+            <div id="s-area">
+                <div id="ins-time"></div>
+                <div id="s-hover"></div>
+                <div id="seek-bar"></div>
+            </div>
+        </div>
+        <div id="player-content">
+            <div id="album-art">
+                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
+                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
+                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
+                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
+                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
+                <div id="buffer-box">Buffering ...</div>
+            </div>
+            <div id="player-controls">
+                <div class="control">
+                    <div class="button" id="play-previous">
+                        <i class="fas fa-backward"></i>
+                    </div>
                 </div>
-                <div id="player-controls">
-                    <div class="control">
-                        <div class="button" id="play-previous">
-                            <i class="fas fa-backward"></i>
-                        </div>
+                <div class="control">
+                    <div class="button" id="play-pause-button">
+                        <i class="fas fa-play"></i>
                     </div>
-                    <div class="control">
-                        <div class="button" id="play-pause-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="control">
-                        <div class="button" id="play-next">
-                            <i class="fas fa-forward"></i>
-                        </div>
+                </div>
+                <div class="control">
+                    <div class="button" id="play-next">
+                        <i class="fas fa-forward"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</footer>
+    </div>
+</body>
 
 <script>
-
     var frame1 = document.getElementById('World404_num1');
     var frame2 = document.getElementById('World404_num2');
     var frame3 = document.getElementById('World404_num3');
     var frame4 = document.getElementById('World404_num4');
 
     // ▶▶ 押された時に、どのフレームか判断して...
-    if (true /** フレーム２に切り替え */) {
-
-      resetHideFrame()
-      // 表示に
-      frame2.classList.toggle('hide-frame')
-    }
-
-    var resetHideFrame = function() {
-      frame1.classList.remove('hide-frame')
-      frame1.classList.add('hide-frame')
-      frame2.classList.remove('hide-frame')
-      frame2.classList.add('hide-frame')
-      frame3.classList.remove('hide-frame')
-      frame3.classList.add('hide-frame')
-      frame4.classList.remove('hide-frame')
-      frame4.classList.add('hide-frame')
-    }
-
-    //読み込み完了してから変数を取得するようにする
-    document.addEventListener(
-        'DOMContentLoaded', event => {
-            document.getElementById('World404_html').onload = () => {
-
-                // iframe要素を取得
-                var iframe = document.getElementsByTagName('iframe');
-
-                var innerDoc = iframe[0].contentDocument || iframe[0].contentWindow.document;
-
-                var w_num = innerDoc.getElementById('world_number');
-
-                var q_num = w_num + 1;
-
-                // // iframeで読み込まれているページからdocumentオブジェクトを取得
-                // var iframeDocument = iframeElem[0].contentDocument || iframeElem[0].contentWindow.document;
-
-                // // iframeで読み込まれているページから要素を取得
-                // var world_number = iframeDocument.getElementsById('world_number')[0];
-            }
-        }
-    )
-
-
-    // var world_number = elem.contentWindow.document.querySelector('#world_number');
-    var element = document.getElementById('World404_num');
-
-
-
-
-    var world_number = document.getElementById('World404_num').contentWindow.document.getElementById('world_number').value;
-
     document.getElementById("play-next").onclick = function() {
-        if (world_number == 4) {
-            world_number = 1;
 
-        } else {
-            world_number++;
+        resetHideFrame();
+
+        if (frame1.classList.contains("hide-frame") == false) {
+            frame2.classList.toggle('hide-frame');
+            frame1.classList.remove('hide-frame');
+            frame1.classList.add('hide-frame');
+
+        } else if (frame2.classList.contains("hide-frame") == false) {
+            frame3.classList.toggle('hide-frame');
+            frame2.classList.remove('hide-frame');
+            frame2.classList.add('hide-frame');
+
+        } else if (frame3.classList.contains("hide-frame") == false) {
+            frame4.classList.toggle('hide-frame');
+            frame3.classList.remove('hide-frame');
+            frame3.classList.add('hide-frame');
+
+        } else if (frame4.classList.contains("hide-frame") == false) {
+            frame1.classList.toggle('hide-frame');
+            frame4.classList.remove('hide-frame');
+            frame4.classList.add('hide-frame');
         }
-
-        if (world_number == 1) {
-            element.setAttribute('src', '404World\deepBlue.html');
-
-
-        } else if (world_number == 2) {
-            element.setAttribute('src', 'universe.html');
-
-        } else if (world_number == 3) {
-            element.setAttribute('src', '404World\deepBlue.html');
-        }
-
     }
 
     document.getElementById("play-previous").onclick = function() {
-        if (world_num == 1) {
-            world_number = 3;
 
-        } else {
-            world_number--;
+        resetHideFrame();
+
+        if (frame1.classList.contains("hide-frame") == false) {
+            frame4.classList.toggle('hide-frame');
+            frame1.classList.remove('hide-frame');
+            frame1.classList.add('hide-frame');
+
+        } else if (frame2.classList.contains("hide-frame") == false) {
+            frame1.classList.toggle('hide-frame');
+            frame2.classList.remove('hide-frame');
+            frame2.classList.add('hide-frame');
+
+        } else if (frame3.classList.contains("hide-frame") == false) {
+            frame2.classList.toggle('hide-frame');
+            frame3.classList.remove('hide-frame');
+            frame3.classList.add('hide-frame');
+
+        } else if (frame4.classList.contains("hide-frame") == false) {
+            frame3.classList.toggle('hide-frame');
+            frame4.classList.remove('hide-frame');
+            frame4.classList.add('hide-frame');
+        }
+    }
+
+    // ちらつく可能性
+    var resetHideFrame = function() {
+        if (frame1.classList.contains("hide-frame")) {
+            frame1.classList.remove('hide-frame');
+            frame1.classList.add('hide-frame');
         }
 
-        if (world_number == 1) {
-            world_src = "playWorld.html";
-
-        } else if (world_number == 2) {
-            world_src = "deepBlue.html";
-
-        } else if (world_number == 3) {
-            world_src = "universe.html";
+        if (frame2.classList.contains("hide-frame")) {
+            frame2.classList.remove('hide-frame');
+            frame2.classList.add('hide-frame');
         }
 
+        if (frame3.classList.contains("hide-frame")) {
+            frame3.classList.remove('hide-frame');
+            frame3.classList.add('hide-frame');
+        }
+
+        if (frame4.classList.contains("hide-frame")) {
+            frame4.classList.remove('hide-frame');
+            frame4.classList.add('hide-frame');
+        }
     }
 </script>
 

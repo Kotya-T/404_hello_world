@@ -1,13 +1,18 @@
     .movieBgBlue {
         position: absolute;
         z-index: 7;
-        overflow: scroll;
+        /* overflow: scroll; */
         display: block;
+    }
+    
+    .movieBgBlue::-webkit-scrollbar {
+        display: none;
     }
     
     .bgBlack {
         background-color: black;
         cursor: url(アンコウ.png);
+        z-index: -14;
     }
     
     .manyF {
