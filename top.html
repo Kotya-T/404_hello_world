@@ -28,8 +28,8 @@
     <div class="all_elements">
         <div class="main">
             <iframe class="" id="World404_num1" src="404World\404.html"></iframe>
-            <iframe class="hide-frame" id="World404_num2" src="404World\deepBlue.html"></iframe>
-            <iframe class="hide-frame" id="World404_num3" src="404World\playWorld.html"></iframe>
+            <iframe class="hide-frame" id="World404_num2" src="404World\playWorld.html"></iframe>
+            <iframe class="hide-frame" id="World404_num3" src="404World\deepBlue.html"></iframe>
             <iframe class="hide-frame" id="World404_num4" src="universe.html"></iframe>
         </div>
 
@@ -85,7 +85,16 @@
     var frame3 = document.getElementById('World404_num3');
     var frame4 = document.getElementById('World404_num4');
 
-    // ▶▶ 押された時に、どのフレームか判断して...
+    // const elem = document.getElementById('_1');
+    // const target = elem.contentWindow.document.querySelector('#play');
+
+    // target.onclick = function() {
+
+    //     $("#play-pause-button").on("click", playPause);
+    // }
+
+
+    // 次の曲　次のページに切り替え
     document.getElementById("play-next").onclick = function() {
 
         resetHideFrame();
@@ -112,6 +121,7 @@
         }
     }
 
+    // 前の曲　魔のページに切り替え
     document.getElementById("play-previous").onclick = function() {
 
         resetHideFrame();
@@ -138,7 +148,7 @@
         }
     }
 
-    // ちらつく可能性
+    // ページ要素切り替え設定初期化
     var resetHideFrame = function() {
         if (frame1.classList.contains("hide-frame")) {
             frame1.classList.remove('hide-frame');

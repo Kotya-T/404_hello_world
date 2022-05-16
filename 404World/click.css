@@ -25,7 +25,7 @@ body {
 #mainImage {
     margin: 0 auto 20px auto;
     width: 100%;
-    position: relative;
+    /* position: relative; */
     border: none;
     padding: 0;
 }
@@ -88,9 +88,9 @@ body {
 
 #play {
     position: absolute;
-    top: 0;
+    top: -7%;
     bottom: 0;
-    left: 0;
+    left: 1%;
     right: 0;
     margin: auto;
     display: block;
